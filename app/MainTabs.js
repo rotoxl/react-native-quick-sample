@@ -31,7 +31,7 @@ const MainTabs = TabNavigator({
             tabBarLabel: "Counter",
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons
-                    name={focused ? 'ios-analytics' : 'ios-analytics-outline'}
+                    name={'ios-analytics' }
                     size={26}
                     style={{ color: tintColor}}
                 />
@@ -45,7 +45,7 @@ const MainTabs = TabNavigator({
             tabBarLabel: "All Colors",
             tabBarIcon: ({tintColor, focused}) => (
                 <Ionicons
-                    name={focused ? 'ios-list-box' : 'ios-list-box-outline'}
+                    name={'ios-list-box'}
                     size={26}
                     style={{ color: tintColor}}
                 />
@@ -59,7 +59,7 @@ const MainTabs = TabNavigator({
     animationEnabled: true,
     swipeEnabled: true,
     tabBarOptions: {
-        activeTintColor: 'red',
+        activeTintColor: '#4ec9b0',
         inactiveTintColor: 'grey',
         showLabel: true,
         showIcon: true,
@@ -74,7 +74,7 @@ const MainTabs = TabNavigator({
             margin: 0,
         },
         indicatorStyle: {
-            backgroundColor: "red"
+            backgroundColor: "#4ec9b0"
         }
     }
 });
