@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {StyleSheet, Text, TouchableOpacity, View, Dimensions} from "react-native";
 
 
 import {bindActionCreators} from "redux";
@@ -23,17 +23,17 @@ class CounterScreen extends Component {
 
     render() {
 
-        const color = this.props.list.length > 0 ? this.props.list[this.props.list.length - 1].color : "#000000";
+        const color = this.props.list.length > 0 ? this.props.list[this.props.list.length - 1].color : "#000000"
 
         return (
             <View style={styles.container}>
-                <ColorCircle color={color}>
+                <ColorCircle color={color} style={{overflow:'visible', }}>
                     <Text style={styles.countText}>
                         {this.props.listSize}
                     </Text>
                 </ColorCircle>
-                <View style={{alignItems: "center", justifyContent: "center"}}>
-                    <TouchableOpacity style={styles.button} onPress={this.props.addRandomItem}>
+                <View style={{alignItems: "center", justifyContent: "center", position:'absolute', bottom:30}}>
+                    <TouchableOpacity style={[styles.button, {backgroundColor:color}]} onPress={this.props.addRandomItem}>
                         <Text style={styles.buttonText}>ADD RANDOM COLOR</Text>
                     </TouchableOpacity>
                 </View>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "white"
+        paddingTop: 30
     },
 
     listSize: {
@@ -65,7 +65,9 @@ const styles = StyleSheet.create({
     countText: {
         color: "grey",
         fontSize: 40,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        top:Dimensions.get('window').height/4,
+        position:'absolute',
     },
 
     button: {
@@ -84,7 +86,7 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "bold"
     }
-});
+})
 
 function mapStateToProps(state) {
     return {
