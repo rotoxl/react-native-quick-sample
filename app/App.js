@@ -2,7 +2,7 @@
  * Created by toni on 07.09.2017.
  */
 import React from "react";
-import {AsyncStorage} from "react-native";
+import {AsyncStorage, View, StatusBar} from "react-native";
 import {Provider} from "react-redux";
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import {autoRehydrate, persistStore} from "redux-persist";
