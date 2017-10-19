@@ -50,9 +50,12 @@ export default class App extends React.Component {
 
 
         return (
-            <Provider store={this.state.store} persistor={this.state.persistor}>
-                <MainTabs />
-            </Provider>
+            <View style={{flex:1, paddingTop:StatusBar.currentHeight, }}>
+                <StatusBar translucent={true} backgroundColor="transparent" barStyle="dark-content"/>
+                <Provider store={this.state.store} persistor={this.state.persistor}>
+                    <MainTabs />
+                </Provider>
+            </View>
         );
     }
 };
