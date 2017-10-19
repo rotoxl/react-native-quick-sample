@@ -39,8 +39,8 @@ class ListScreen extends Component {
 
     renderItem({item}) {
         return (
-            <View style={styles.listItem}>
-                <Text style={{width: 80}}>{item.key}</Text>
+            <View style={[styles.listItem, {backgroundColor:item.color}]}>
+                <Text style={{paddingLeft:8, fontSize:30, opacity:.9}}>{item.key}</Text>
                 <View style={[styles.colorPreview, {backgroundColor: item.color}]}/>
             </View>
         )
@@ -53,7 +53,7 @@ class ListScreen extends Component {
                         <Ionicons
                             name={'ios-trash-outline'}
                             size={26}
-                            style={{color: "red", marginRight: 10}}
+                            style={{color:'#4ec9b0', marginRight: 10}}
                         />
                     </TouchableOpacity>
     })
@@ -65,15 +65,15 @@ const styles = StyleSheet.create({
     container: {
 
         flex: 1,
-        paddingTop: 5
+        paddingTop: 0
     },
 
     listItem: {
-        height: 35,
+        height: 65,
         flexDirection: "row",
         backgroundColor: "white",
-        marginBottom: 5,
-        elevation: 2,
+        marginBottom: 0,
+        
         alignItems: "center",
         padding: 5
     },
